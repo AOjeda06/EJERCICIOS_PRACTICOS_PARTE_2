@@ -1,0 +1,30 @@
+El Padrino;1972
+Titanic;1997
+La La Land;2016
+Matrix;1999
+Toy Story;1995
+Parásitos;2019
+Amélie;2001
+Blade Runner;1982
+2001: Una odisea del espacio;1968
+El viaje de Chihiro;2001
+Inception;2010
+Casablanca;1942
+Pulp Fiction;1994
+La lista de Schindler;1993
+El laberinto del fauno;2006
+Malformada sin año
+SinSeparador1990
+Título con ; punto;2005
+El gran dictador;1940
+Avatar;2009
+Regreso al futuro;1985
+El silencio de los corderos;1991
+Forrest Gump;1994
+Los siete samuráis;1954
+El rey león;1994
+La naranja mecánica;1971
+El bueno, el feo y el malo;1966
+La vida es bella;1997
+El secreto de sus ojos;2009
+La llegada;2016
