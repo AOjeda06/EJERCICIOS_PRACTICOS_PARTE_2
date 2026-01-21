@@ -1,0 +1,261 @@
+[
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Pipe",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Pipe",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Manager",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Pool",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Process",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Pipe",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "contar_vocal_pipe",
+        "kind": 2,
+        "importPath": "EJ1.EJ1",
+        "description": "EJ1.EJ1",
+        "peekOfCode": "def contar_vocal_pipe(vocal, ruta_fichero, conn_send):\n    \"\"\"\n    Proceso que cuenta las apariciones de una vocal en el fichero y envía el resultado.\n    Parámetros:\n      - vocal: carácter (string) con la vocal a contar (ej. 'a').\n      - ruta_fichero: ruta al fichero de texto.\n      - conn_send: extremo de la Pipe usado para enviar (send).\n    Comportamiento:\n      - Abre el fichero en modo lectura (utf-8).\n      - Recorre línea a línea y suma las apariciones de la vocal (case-insensitive).",
+        "detail": "EJ1.EJ1",
+        "documentation": {}
+    },
+    {
+        "label": "crear_fichero_ejemplo",
+        "kind": 2,
+        "importPath": "EJ1.EJ1",
+        "description": "EJ1.EJ1",
+        "peekOfCode": "def crear_fichero_ejemplo(ruta, repeticiones=2000):\n    \"\"\"\n    Crea un fichero de ejemplo si no existe para que el script sea autocontenido.\n    \"\"\"\n    ejemplo = (\n        \"Este es un fichero de ejemplo. Contiene varias vocales: \"\n        \"aaaa eeee iiii oooo uuuu. Además algunas palabras en mayúsculas: AEIOU.\\n\"\n        \"Multiprocessing permite ejecutar tareas en paralelo y acelerar ciertos trabajos.\\n\"\n    )\n    with open(ruta, 'w', encoding='utf-8') as f:",
+        "detail": "EJ1.EJ1",
+        "documentation": {}
+    },
+    {
+        "label": "generar_ips",
+        "kind": 2,
+        "importPath": "EJ2.EJ2",
+        "description": "EJ2.EJ2",
+        "peekOfCode": "def generar_ips(n, conn_send):\n    \"\"\"\n    Proceso 1: genera n direcciones IPv4 aleatorias y las envía por conn_send.\n    Envía None al final como sentinel.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    enviados = 0\n    for _ in range(n):\n        # Generar 4 octetos válidos (0-255). Evitamos direcciones especiales 0.x y 255.x en la práctica.",
+        "detail": "EJ2.EJ2",
+        "documentation": {}
+    },
+    {
+        "label": "clase_ip",
+        "kind": 2,
+        "importPath": "EJ2.EJ2",
+        "description": "EJ2.EJ2",
+        "peekOfCode": "def clase_ip(ip):\n    \"\"\"\n    Determina la clase de una dirección IPv4 por su primer octeto.\n    Devuelve 'A', 'B', 'C', 'D', 'E' o None si la IP no es válida.\n    Reglas simplificadas:\n      - A: 1..126\n      - B: 128..191\n      - C: 192..223\n      - D: 224..239 (multicast)\n      - E: 240..254 (experimental)",
+        "detail": "EJ2.EJ2",
+        "documentation": {}
+    },
+    {
+        "label": "filtrar_ips",
+        "kind": 2,
+        "importPath": "EJ2.EJ2",
+        "description": "EJ2.EJ2",
+        "peekOfCode": "def filtrar_ips(conn_recv, conn_send):\n    \"\"\"\n    Proceso 2: recibe IPs por conn_recv, filtra las que son de clase A/B/C\n    y las reenvía por conn_send. Recibe sentinel None para terminar y reenvía None.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    recibidas = 0\n    reenviadas = 0\n    while True:",
+        "detail": "EJ2.EJ2",
+        "documentation": {}
+    },
+    {
+        "label": "imprimir_ips",
+        "kind": 2,
+        "importPath": "EJ2.EJ2",
+        "description": "EJ2.EJ2",
+        "peekOfCode": "def imprimir_ips(conn_recv):\n    \"\"\"\n    Proceso 3: recibe tuplas (ip, clase) por conn_recv hasta recibir None.\n    Imprime cada IP y su clase. Mide tiempo y número de impresiones.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    procesadas = 0\n    while True:\n        item = conn_recv.recv()",
+        "detail": "EJ2.EJ2",
+        "documentation": {}
+    },
+    {
+        "label": "generar_notas",
+        "kind": 2,
+        "importPath": "EJ3.EJ3A",
+        "description": "EJ3.EJ3A",
+        "peekOfCode": "def generar_notas(ruta_fichero, n_notas=6):\n    \"\"\"\n    Proceso 1: genera n_notas números aleatorios entre 1 y 10 (decimales)\n    y los guarda en ruta_fichero, una nota por línea.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    with open(ruta_fichero, 'w', encoding='utf-8') as f:\n        for _ in range(n_notas):\n            nota = round(random.uniform(1.0, 10.0), 2)  # dos decimales",
+        "detail": "EJ3.EJ3A",
+        "documentation": {}
+    },
+    {
+        "label": "calcular_media_y_apendar",
+        "kind": 2,
+        "importPath": "EJ3.EJ3A",
+        "description": "EJ3.EJ3A",
+        "peekOfCode": "def calcular_media_y_apendar(ruta_fichero, nombre_alumno, ruta_medias, lock):\n    \"\"\"\n    Proceso 2: lee las notas de ruta_fichero, calcula la media y apenda\n    'media nombre_alumno' a ruta_medias. Usa lock (Manager().Lock()) para\n    sincronizar la escritura.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    notas = []\n    try:",
+        "detail": "EJ3.EJ3A",
+        "documentation": {}
+    },
+    {
+        "label": "proceso_maximo_medias",
+        "kind": 2,
+        "importPath": "EJ3.EJ3A",
+        "description": "EJ3.EJ3A",
+        "peekOfCode": "def proceso_maximo_medias(ruta_medias):\n    \"\"\"\n    Proceso 3: lee medias.txt y obtiene la nota máxima junto con el alumno.\n    Imprime el resultado por pantalla.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    max_nota = None\n    alumno_max = None\n    try:",
+        "detail": "EJ3.EJ3A",
+        "documentation": {}
+    },
+    {
+        "label": "generar_notas_pool",
+        "kind": 2,
+        "importPath": "EJ3.EJ3B",
+        "description": "EJ3.EJ3B",
+        "peekOfCode": "def generar_notas_pool(args):\n    \"\"\"\n    Worker para Pool: genera n_notas y guarda en ruta_fichero.\n    args: (ruta_fichero, n_notas)\n    \"\"\"\n    ruta_fichero, n_notas = args\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    with open(ruta_fichero, 'w', encoding='utf-8') as f:\n        for _ in range(n_notas):",
+        "detail": "EJ3.EJ3B",
+        "documentation": {}
+    },
+    {
+        "label": "calcular_media_pool",
+        "kind": 2,
+        "importPath": "EJ3.EJ3B",
+        "description": "EJ3.EJ3B",
+        "peekOfCode": "def calcular_media_pool(args):\n    \"\"\"\n    Worker para Pool: lee fichero y devuelve (media, nombre_alumno).\n    args: (ruta_fichero, nombre_alumno)\n    \"\"\"\n    ruta_fichero, nombre_alumno = args\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    notas = []\n    try:",
+        "detail": "EJ3.EJ3B",
+        "documentation": {}
+    },
+    {
+        "label": "proceso_maximo_medias",
+        "kind": 2,
+        "importPath": "EJ3.EJ3B",
+        "description": "EJ3.EJ3B",
+        "peekOfCode": "def proceso_maximo_medias(ruta_medias):\n    \"\"\"\n    Igual que en la versión for: lee medias.txt y muestra la nota máxima.\n    \"\"\"\n    pid = os.getpid()\n    t0 = time.perf_counter()\n    max_nota = None\n    alumno_max = None\n    try:\n        with open(ruta_medias, 'r', encoding='utf-8') as f:",
+        "detail": "EJ3.EJ3B",
+        "documentation": {}
+    },
+    {
+        "label": "proceso_filtrar_por_anyo",
+        "kind": 2,
+        "importPath": "EJ4.EJ4",
+        "description": "EJ4.EJ4",
+        "peekOfCode": "def proceso_filtrar_por_anyo(ruta_fichero, anyo_objetivo, conn_send):\n    \"\"\"\n    Proceso 1:\n      - ruta_fichero: fichero con líneas \"Titulo;Año\"\n      - anyo_objetivo: int con el año a filtrar\n      - conn_send: extremo send de la Pipe para enviar películas coincidentes\n    Comportamiento:\n      - Lee el fichero línea a línea.\n      - Para cada línea válida que tenga el formato \"titulo;anio\" y cuyo año\n        coincida con anyo_objetivo, envía la cadena \"titulo;anio\" por la Pipe.",
+        "detail": "EJ4.EJ4",
+        "documentation": {}
+    },
+    {
+        "label": "proceso_escribir_peliculas",
+        "kind": 2,
+        "importPath": "EJ4.EJ4",
+        "description": "EJ4.EJ4",
+        "peekOfCode": "def proceso_escribir_peliculas(conn_recv, anyo_objetivo):\n    \"\"\"\n    Proceso 2:\n      - conn_recv: extremo recv de la Pipe para recibir películas (formato \"titulo;anio\")\n      - anyo_objetivo: int con el año (se usa para construir el nombre de fichero)\n    Comportamiento:\n      - Crea/abre el fichero peliculasXXXX (modo escritura, sobrescribe si existe).\n      - Lee de la Pipe hasta recibir None.\n      - Por cada película recibida escribe una línea en el fichero (titulo;anio).\n      - Mide y muestra tiempo y número de películas escritas.",
+        "detail": "EJ4.EJ4",
+        "documentation": {}
+    },
+    {
+        "label": "validar_anyo_input",
+        "kind": 2,
+        "importPath": "EJ4.EJ4",
+        "description": "EJ4.EJ4",
+        "peekOfCode": "def validar_anyo_input(anyo_str):\n    \"\"\"\n    Valida que anyo_str represente un entero menor que el año actual.\n    Devuelve int si válido, o None si no lo es.\n    \"\"\"\n    try:\n        anyo = int(anyo_str)\n    except ValueError:\n        return None\n    año_actual = datetime.now().year",
+        "detail": "EJ4.EJ4",
+        "documentation": {}
+    }
+]
